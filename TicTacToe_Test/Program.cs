@@ -1,84 +1,116 @@
-using System;
-using OpenQA.Selenium;
-using PercyIO.Selenium;
-using OpenQA.Selenium.Chrome;
 using NUnit.Framework;
-using Boa.Constrictor.Screenplay;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using System;
 using Boa.Constrictor.Selenium;
+using static Boa.Constrictor.Selenium.WebLocator;
+using Boa.Constrictor.Screenplay;
 
-namespace TicTacToe_Tests
+namespace TicTacToe_Test
 {
-    [TestFixture]
-    public class CommonTests
+
+
+
+    class TicTacToe_Test
     {
+        String test_url = "http://localhost:3000/";
+        public static IWebLocator ToggleButton => L(
+            "Toggle Button",
+            By.XPath("//button[@type='submit']"));
+        public static IWebLocator SquareTopRowFarLeftCell => L(
+            "Game board - top row, far left cell",
+            By.XPath("//div[1]/button[@class='square'][1]"));
 
-        private TicTacToeTests tests;
+        public static IWebLocator SquareTopRowMiddleCell => L(
+            "Game board - top row, middle cell",
+            By.XPath("//div[1]/button[@class='square'][2]"));
 
-        public CommonTests()
-        {
-            tests = new TicTacToeTests();
-        }
-        [OneTimeSetUp]
-        public void OneTimeSetUp() => tests.OneTimeSetUp();
+        public static IWebLocator SquareTopRowFarRightCell => L(
+            "Game board - top row, far right cell",
+            By.XPath("//div[@class='board-row']/button[@class='square']"));
 
-        [OneTimeTearDown]
-        public void OneTimeTearDown() => tests.OneTimeTearDown();
+        public static IWebLocator SquareMiddleRowFarLeftCell => L(
+    "Game board - middle row, far left cell",
+    By.XPath("//div[2]/button[@class='square'][1]"));
 
-        [SetUp]
-        public void Setup() => tests.Setup();
+        public static IWebLocator SquareMiddleRowMiddleCell => L(
+            "Game board - middle row, middle cell",
+            By.XPath("//div[2]/button[@class='square'][2]"));
 
-        [TearDown]
-        public void Teardown() => tests.Teardown();
+        public static IWebLocator SquareMiddleRowFarRightCell => L(
+            "Game board - middle row, far right cell",
+            By.XPath("//div[2]/button[@class='square'][3]"));
 
-    }
+        public static IWebLocator SquareBottomRowFarLeftCell => L(
+            "Game board - bottom row, far left cell",
+            By.XPath("//div[3]/button[@class='square'][1]"));
 
-    [TestFixture("Chrome")]
+        public static IWebLocator SquareBottomRowMiddleCell => L(
+            "Game board - bottom row, middle cell",
+            By.XPath("//div[3]/button[@class='square'][2]"));
 
-    public class TicTacToeTests
-    {
+        public static IWebLocator SquareBottomRowFarRightCell => L(
+            "Game board - bottom row, far right cell",
+            By.XPath("//div[3]/button[@class='square'][3]"));
+
+
         private IWebDriver driver;
         private IActor Actor;
-
-        public TicTacToeTests()
-        {
-
-        }
-
-        [OneTimeSetUp]
-        public void OneTimeSetUp()
-        {
-            Actor = new Actor(name: "Bob", logger: new ConsoleLogger());
-
-            ChromeOptions chromeOptions = new ChromeOptions();
-            driver = new ChromeDriver(chromeOptions);
-            Assert.That(driver, Is.Not.Null);
-            Actor.Can(BrowseTheWeb.With(driver));
-
-        }
-
-        [OneTimeTearDown]
-        public void OneTimeTearDown()
-        {
-
-        }
 
         [SetUp]
         public void Setup()
         {
+            // Local Selenium WebDriver
+            ChromeOptions options = new();
+            //options.AddArgument("--headless");
+            driver = new ChromeDriver(options);
+            Assert.That(driver, Is.Not.Null);
+            driver.Url = test_url;
+            driver.Manage().Window.Maximize();
+            Actor = new Actor(name: "Bob", logger: new ConsoleLogger());
+            Assert.That(Actor, Is.Not.Null);
+            Actor.Logger.Log("In OneTimeSetUp");
+            Actor.Can(BrowseTheWeb.With(driver));
+            string profileUrl = Actor.AsksFor(CurrentUrl.FromBrowser());
+            if (!profileUrl.Contains(test_url))
+            {
+                Console.WriteLine("not at url");
+            }
         }
 
-        [TearDown]
-        public void Teardown()
+        [Test]
+        public void Test_Win_X()
+        {
+
+            System.Collections.ObjectModel.ReadOnlyCollection<IWebElement> li = driver.FindElements(By.XPath("//div/button[@class='square']"));
+
+            li[1].Click();
+            li[4].Click();
+
+
+        }
+
+        [Test]
+        public void Test_Win_O()
         {
 
         }
 
         [Test]
-        [Category("Daily")]
-        public void TC001()
+        public void Test_Draw()
         {
 
         }
 
+        [Test]
+        public void ToggleMoveHistoryOrder()
+        {
+            Actor.AttemptsTo(Click.On(ToggleButton));
+        }
+        [TearDown]
+        public void close_Browser()
+        {
+            driver.Quit();
+        }
     }
 }

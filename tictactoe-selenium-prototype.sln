@@ -5,7 +5,9 @@ VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.Test", "Server.Test\Server.Test.csproj", "{853456F1-B185-4BD3-8420-CAFF3038F0B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToe_Test", "TicTacToe_Test\TicTacToe_Test.csproj", "{D18EEDB9-BEFD-4938-A116-489626DCB950}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToe_Test", "TicTacToe_Test\TicTacToe_Test.csproj", "{D18EEDB9-BEFD-4938-A116-489626DCB950}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumDemo", "SeleniumDemo\SeleniumDemo.csproj", "{1C67736C-FA70-452A-BE80-89F27678F830}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{D18EEDB9-BEFD-4938-A116-489626DCB950}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D18EEDB9-BEFD-4938-A116-489626DCB950}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D18EEDB9-BEFD-4938-A116-489626DCB950}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C67736C-FA70-452A-BE80-89F27678F830}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C67736C-FA70-452A-BE80-89F27678F830}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C67736C-FA70-452A-BE80-89F27678F830}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C67736C-FA70-452A-BE80-89F27678F830}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
