@@ -17,42 +17,12 @@ namespace TicTacToe_Test
         public static IWebLocator ToggleButton => L(
             "Toggle Button",
             By.XPath("//button[@type='submit']"));
-        public static IWebLocator SquareTopRowFarLeftCell => L(
-            "Game board - top row, far left cell",
-            By.XPath("//div[1]/button[@class='square'][1]"));
 
-        public static IWebLocator SquareTopRowMiddleCell => L(
-            "Game board - top row, middle cell",
-            By.XPath("//div[1]/button[@class='square'][2]"));
+        public static IWebLocator BoardStatus => L(
+            "Board Status",
+            By.XPath("//div[@class='status']"));
 
-        public static IWebLocator SquareTopRowFarRightCell => L(
-            "Game board - top row, far right cell",
-            By.XPath("//div[@class='board-row']/button[@class='square']"));
-
-        public static IWebLocator SquareMiddleRowFarLeftCell => L(
-    "Game board - middle row, far left cell",
-    By.XPath("//div[2]/button[@class='square'][1]"));
-
-        public static IWebLocator SquareMiddleRowMiddleCell => L(
-            "Game board - middle row, middle cell",
-            By.XPath("//div[2]/button[@class='square'][2]"));
-
-        public static IWebLocator SquareMiddleRowFarRightCell => L(
-            "Game board - middle row, far right cell",
-            By.XPath("//div[2]/button[@class='square'][3]"));
-
-        public static IWebLocator SquareBottomRowFarLeftCell => L(
-            "Game board - bottom row, far left cell",
-            By.XPath("//div[3]/button[@class='square'][1]"));
-
-        public static IWebLocator SquareBottomRowMiddleCell => L(
-            "Game board - bottom row, middle cell",
-            By.XPath("//div[3]/button[@class='square'][2]"));
-
-        public static IWebLocator SquareBottomRowFarRightCell => L(
-            "Game board - bottom row, far right cell",
-            By.XPath("//div[3]/button[@class='square'][3]"));
-
+        public static string BoardSquareCollection = "//div/button[@class='square']";
 
         private IWebDriver driver;
         private IActor Actor;
@@ -82,35 +52,77 @@ namespace TicTacToe_Test
         public void Test_Win_X()
         {
 
-            System.Collections.ObjectModel.ReadOnlyCollection<IWebElement> li = driver.FindElements(By.XPath("//div/button[@class='square']"));
+            System.Collections.ObjectModel.ReadOnlyCollection<IWebElement> li = driver.FindElements(By.XPath(BoardSquareCollection));
 
-            li[1].Click();
+            li[2].Click();
             li[4].Click();
+            li[8].Click();
+            li[7].Click();
+            li[5].Click();
 
+            Actor.WaitsUntil(Appearance.Of(BoardStatus), IsEqualTo.True());
+            string text = Actor.AsksFor(Text.Of(BoardStatus));
+            Assert.That(text, Is.EqualTo("Winner: X"));
 
         }
 
         [Test]
         public void Test_Win_O()
         {
+            System.Collections.ObjectModel.ReadOnlyCollection<IWebElement> li = driver.FindElements(By.XPath(BoardSquareCollection));
+
+            li[1].Click();
+            li[2].Click();
+            li[0].Click();
+            li[5].Click();
+            li[4].Click();
+            li[8].Click();
+
+            Actor.WaitsUntil(Appearance.Of(BoardStatus), IsEqualTo.True());
+            string text = Actor.AsksFor(Text.Of(BoardStatus));
+            Assert.That(text, Is.EqualTo("Winner: O"));
 
         }
 
         [Test]
         public void Test_Draw()
         {
+            System.Collections.ObjectModel.ReadOnlyCollection<IWebElement> li = driver.FindElements(By.XPath(BoardSquareCollection));
+
+            li[1].Click();
+            li[2].Click();
+            li[4].Click();
+            li[7].Click();
+            li[5].Click();
+            li[3].Click();
+            li[0].Click();
+            li[8].Click();
+            li[6].Click();
+
+            Actor.WaitsUntil(Appearance.Of(BoardStatus), IsEqualTo.True());
+            string text = Actor.AsksFor(Text.Of(BoardStatus));
+            Assert.That(text, Is.EqualTo("Draw"));
+
 
         }
 
         [Test]
         public void ToggleMoveHistoryOrder()
         {
+            System.Collections.ObjectModel.ReadOnlyCollection<IWebElement> li = driver.FindElements(By.XPath(BoardSquareCollection));
+
+            li[1].Click();
+            li[2].Click();
+            li[0].Click();
+            li[5].Click();
+
+            Thread.Sleep(TimeSpan.FromSeconds(1));
             Actor.AttemptsTo(Click.On(ToggleButton));
         }
         [TearDown]
         public void close_Browser()
         {
-            driver.Quit();
+            //driver.Quit();
         }
     }
 }
