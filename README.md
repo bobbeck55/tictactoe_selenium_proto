@@ -38,6 +38,33 @@ In the shell window you're working in, export the token environment variable:
 ``` shell
 $ export PERCY_TOKEN="<your token here>"
 ```
+------------------------------------------
+window 1:
+
+
+cd example-percy-dotnet-selenium
+dotnet run --no-restore --project Server
+
+window 2:
+set PERCY_BRANCH=master
+set PERCY_TOKEN=
+
+cd tictactoe_react_selenium
+node_modules\.bin\percy exec -- dotnet test --no-restore
+
+[make ui changes and build]
+set PERCY_BRANCH=local
+
+cd tictactoe_react_selenium
+node_modules\.bin\percy exec -- dotnet test --no-restore
+
+-----------------------------
+
+
+
+
+
+
 
 **Windows**
 
