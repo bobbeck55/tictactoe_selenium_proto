@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "TicTacToe_Test": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "PERCY_TOKEN": "16d6c1c50040a9909df6d88f836c7fcf2c1869bdb1c6e400d2f519fdeb89f62f",
+        "PERCY_BRANCH": "master"
+      }
+    }
+  }
+}

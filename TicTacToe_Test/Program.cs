@@ -101,11 +101,13 @@ namespace TicTacToe_Test
 
             Thread.Sleep(TimeSpan.FromSeconds(1));
             Actor.AttemptsTo(Click.On(GamePage.ToggleButton));
+
+            Percy.Snapshot(driver, "ToggleMoveHistoryOrder");
         }
         [TearDown]
         public void close_Browser()
         {
-            //driver.Quit();
+            driver.Quit();
         }
     }
 }

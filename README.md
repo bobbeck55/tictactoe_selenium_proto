@@ -39,13 +39,8 @@ In the shell window you're working in, export the token environment variable:
 $ export PERCY_TOKEN="<your token here>"
 ```
 ------------------------------------------
-window 1:
 
-
-cd example-percy-dotnet-selenium
-dotnet run --no-restore --project Server
-
-window 2:
+window:
 set PERCY_BRANCH=master
 set PERCY_TOKEN=
 
