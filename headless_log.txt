@@ -1,0 +1,68 @@
+  TicTacToe_Test -> C:\Users\bob_b\tictactoe_selenium_proto\TicTacToe_Test\bin\Debug\net6.0\TicTacToe_Test.dll
+Test run for C:\Users\bob_b\tictactoe_selenium_proto\TicTacToe_Test\bin\Debug\net6.0\TicTacToe_Test.dll (.NETCoreApp,Version=v6.0)
+Microsoft (R) Test Execution Command Line Tool Version 17.2.0 (x64)
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+Starting ChromeDriver 109.0.5414.74 (e7c5703604daa9cc128ccf5a5d3e993513758913-refs/branch-heads/5414@{#1172}) on port 61202
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+2023-02-07 17:21:26Z [INFO] In OneTimeSetUp
+2023-02-07 17:21:26Z [INFO] Adding Ability for Screenplay Actor 'Bob' to browse the Web with OpenQA.Selenium.Chrome.ChromeDriver
+2023-02-07 17:21:26Z [INFO] Screenplay Actor 'Bob' asks for current browser URL
+2023-02-07 17:21:26Z [INFO] current browser URL was http://localhost:3000/
+2023-02-07 17:21:27Z [INFO] Screenplay Actor 'Bob' asks for wait until appearance of 'Game Status' is equal to 'True'
+2023-02-07 17:21:27Z [INFO] wait until appearance of 'Game Status' is equal to 'True' for up to 30s was True
+2023-02-07 17:21:27Z [INFO] Screenplay Actor 'Bob' asks for text of 'Game Status'
+2023-02-07 17:21:27Z [INFO] Screenplay Actor 'Bob' asks for wait until existence of 'Game Status' is equal to 'True'
+2023-02-07 17:21:27Z [INFO] wait until existence of 'Game Status' is equal to 'True' for up to 30s was True
+2023-02-07 17:21:27Z [INFO] text of 'Game Status' was Draw
+[\u001b[35mpercy\u001b[39m] Percy is not running, disabling snapshots
+
+Starting ChromeDriver 109.0.5414.74 (e7c5703604daa9cc128ccf5a5d3e993513758913-refs/branch-heads/5414@{#1172}) on port 61220
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+2023-02-07 17:21:33Z [INFO] In OneTimeSetUp
+2023-02-07 17:21:33Z [INFO] Adding Ability for Screenplay Actor 'Bob' to browse the Web with OpenQA.Selenium.Chrome.ChromeDriver
+2023-02-07 17:21:33Z [INFO] Screenplay Actor 'Bob' asks for current browser URL
+2023-02-07 17:21:33Z [INFO] current browser URL was http://localhost:3000/
+2023-02-07 17:21:34Z [INFO] Screenplay Actor 'Bob' asks for wait until appearance of 'Game Status' is equal to 'True'
+2023-02-07 17:21:34Z [INFO] wait until appearance of 'Game Status' is equal to 'True' for up to 30s was True
+2023-02-07 17:21:34Z [INFO] Screenplay Actor 'Bob' asks for text of 'Game Status'
+2023-02-07 17:21:34Z [INFO] Screenplay Actor 'Bob' asks for wait until existence of 'Game Status' is equal to 'True'
+2023-02-07 17:21:34Z [INFO] wait until existence of 'Game Status' is equal to 'True' for up to 30s was True
+2023-02-07 17:21:34Z [INFO] text of 'Game Status' was Winner: O
+
+Starting ChromeDriver 109.0.5414.74 (e7c5703604daa9cc128ccf5a5d3e993513758913-refs/branch-heads/5414@{#1172}) on port 61236
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+2023-02-07 17:21:36Z [INFO] In OneTimeSetUp
+2023-02-07 17:21:36Z [INFO] Adding Ability for Screenplay Actor 'Bob' to browse the Web with OpenQA.Selenium.Chrome.ChromeDriver
+2023-02-07 17:21:36Z [INFO] Screenplay Actor 'Bob' asks for current browser URL
+2023-02-07 17:21:36Z [INFO] current browser URL was http://localhost:3000/
+2023-02-07 17:21:36Z [INFO] Screenplay Actor 'Bob' asks for wait until appearance of 'Game Status' is equal to 'True'
+2023-02-07 17:21:36Z [INFO] wait until appearance of 'Game Status' is equal to 'True' for up to 30s was True
+2023-02-07 17:21:36Z [INFO] Screenplay Actor 'Bob' asks for text of 'Game Status'
+2023-02-07 17:21:36Z [INFO] Screenplay Actor 'Bob' asks for wait until existence of 'Game Status' is equal to 'True'
+2023-02-07 17:21:36Z [INFO] wait until existence of 'Game Status' is equal to 'True' for up to 30s was True
+2023-02-07 17:21:36Z [INFO] text of 'Game Status' was Winner: X
+
+Starting ChromeDriver 109.0.5414.74 (e7c5703604daa9cc128ccf5a5d3e993513758913-refs/branch-heads/5414@{#1172}) on port 61252
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+2023-02-07 17:21:38Z [INFO] In OneTimeSetUp
+2023-02-07 17:21:38Z [INFO] Adding Ability for Screenplay Actor 'Bob' to browse the Web with OpenQA.Selenium.Chrome.ChromeDriver
+2023-02-07 17:21:38Z [INFO] Screenplay Actor 'Bob' asks for current browser URL
+2023-02-07 17:21:38Z [INFO] current browser URL was http://localhost:3000/
+2023-02-07 17:21:40Z [INFO] Screenplay Actor 'Bob' attempts to click on 'Toggle Button'
+2023-02-07 17:21:40Z [INFO] Screenplay Actor 'Bob' asks for wait until appearance of 'Toggle Button' is equal to 'True'
+2023-02-07 17:21:40Z [INFO] wait until appearance of 'Toggle Button' is equal to 'True' for up to 30s was True
+2023-02-07 17:21:40Z [INFO] Screenplay Actor 'Bob' successfully did click on 'Toggle Button'
+
+
+Passed!  - Failed:     0, Passed:     4, Skipped:     0, Total:     4, Duration: 15 s - TicTacToe_Test.dll (net6.0)
