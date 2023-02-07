@@ -59,6 +59,8 @@ namespace TicTacToe_Test
             li[0].Click();
             li[5].Click();
             li[4].Click();
+            li[7].Click();
+            li[6].Click();
             li[8].Click();
 
             Actor.WaitsUntil(Appearance.Of(GamePage.Status), IsEqualTo.True());
@@ -73,14 +75,14 @@ namespace TicTacToe_Test
             System.Collections.ObjectModel.ReadOnlyCollection<IWebElement> li = driver.FindElements(By.XPath(BoardPage.SquaresCollection));
 
             li[1].Click();
-            li[2].Click();
-            li[4].Click();
-            li[7].Click();
             li[5].Click();
+            li[7].Click();
+            li[4].Click();
             li[3].Click();
+            li[6].Click();
+            li[2].Click();
             li[0].Click();
             li[8].Click();
-            li[6].Click();
 
             Actor.WaitsUntil(Appearance.Of(GamePage.Status), IsEqualTo.True());
             string text = Actor.AsksFor(Text.Of(GamePage.Status));
