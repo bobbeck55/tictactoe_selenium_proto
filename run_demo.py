@@ -23,7 +23,7 @@ if len(sys.argv) == 4:
 subprocess.check_output("git checkout demo_v1", shell=True)
 
 # spawn a new cmd prompt window with "npm start"
-p = subprocess.Popen([r'start', r'cmd', '/k', r'npm', r'start'], cwd="..\\tictactoe_react_proto", shell=True)
+p = subprocess.Popen([r'start', r'cmd', '/k', r'npm', r'start'], cwd="../tictactoe_react_proto", shell=True)
 
 subprocess.check_output("git checkout demo_selenium_v1", shell=True)
 
