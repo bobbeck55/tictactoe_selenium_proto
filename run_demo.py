@@ -20,12 +20,10 @@ if len(sys.argv) == 4:
     myEnv["PERCY_TOKEN"] = sys.argv[3]
 
 
-subprocess.check_output("git checkout demo_v1", shell=True)
-
 # spawn a new cmd prompt window with "npm start"
-p = subprocess.Popen([r'start', r'cmd', '/k', r'npm', r'start'], cwd="../tictactoe_react_proto", shell=True)
+p = subprocess.Popen([r'start', r'cmd', '/k', r'git', r'checkout', r'demo_v1', r'npm', r'start'], cwd="../tictactoe_react_proto", shell=True)
 
-subprocess.check_output("git checkout demo_selenium_v1", shell=True)
+#subprocess.check_output("git checkout demo_selenium_v1", shell=True)
 
 
 if len(sys.argv) == 5 and sys.argv[2] == 'percy':
