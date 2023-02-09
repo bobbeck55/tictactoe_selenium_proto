@@ -38,7 +38,7 @@ if len(sys.argv) == 5 and sys.argv[2] == 'percy':
 
 else:
 
-    subprocess.Popen([cmd, arg3, arg4, arg4], env=myEnv, shell=True)
+    subprocess.Popen([arg3, arg4, arg4], env=myEnv, shell=True)
 
 
 
