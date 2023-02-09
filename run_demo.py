@@ -25,17 +25,16 @@ p = subprocess.Popen([r'start', r'cmd', '/k', r'git', r'checkout', r'demo_v1', r
 
 #subprocess.check_output("git checkout demo_selenium_v1", shell=True)
 
+
 arg3 = r'dotnet'
 arg4 = r'test'
 arg5 = r'--no-restore'
+
 
 if len(sys.argv) == 5 and sys.argv[2] == 'percy':
     cmd = r'node_modules\\.bin\\percy'
     arg1 = r'exec'
     arg2 = r'--'
-    arg3 = r'dotnet'
-    arg4 = r'test'
-    arg5 = r'--no-restore'
 
     subprocess.Popen([cmd, arg1, arg2, arg3, arg4, arg5], env=myEnv, shell=True)
 
