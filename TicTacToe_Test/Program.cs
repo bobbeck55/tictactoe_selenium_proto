@@ -29,7 +29,42 @@ namespace TicTacToe_Test
             Actor.Can(BrowseTheWeb.With(driver));
             string profileUrl = Actor.AsksFor(CurrentUrl.FromBrowser());
             Assert.That(profileUrl, Is.EqualTo(test_url));
-        }
+
+            // console log header
+            // visual studio version
+/*
+            try
+            {
+
+                System.Diagnostics.ProcessStartInfo procStartInfo =
+                    new System.Diagnostics.ProcessStartInfo("cmd", "C:\"\\Program Files\\Microsoft Visual Studio\"\\2022\\Community\\Common7\\Tools\\vsdevcmd.bat");
+
+                // The following commands are needed to redirect the standard output.
+                // This means that it will be redirected to the Process.StandardOutput StreamReader.
+                procStartInfo.RedirectStandardOutput = true;
+                procStartInfo.UseShellExecute = false;
+                // Do not create the black window.
+                procStartInfo.CreateNoWindow = true;
+                // Now we create a process, assign its ProcessStartInfo and start it
+                System.Diagnostics.Process proc = new System.Diagnostics.Process();
+                proc.StartInfo = procStartInfo;
+                proc.Start();
+                // Get the output into a string
+                string result = proc.StandardOutput.ReadToEnd();
+                // Display the command output.
+                Console.WriteLine(result);
+            }
+            catch (Exception objException)
+            {
+                // Log the exception
+            }
+ */
+    // browser and version
+    // .dotnet version
+    // .sln file
+
+}
+
 
         [Test]
         public void Test_Win_X()
