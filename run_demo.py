@@ -21,7 +21,7 @@ if len(sys.argv) == 4:
 
 
 # spawn a new cmd prompt window with "npm start"
-p = subprocess.Popen([r'demo_cmd.bat'], shell=True)
+p = subprocess.Popen([r'start', r'cmd', '/k', r'demo_cmd.bat'], shell=True)
 
 
 arg3 = r'dotnet'
@@ -29,7 +29,7 @@ arg4 = r'test'
 arg5 = r'--no-restore'
 
 
-if len(sys.argv) == 5 and sys.argv[2] == 'percy':
+if len(sys.argv) == 4 and sys.argv[1] == 'percy':
     cmd = r'node_modules\\.bin\\percy'
     arg1 = r'exec'
     arg2 = r'--'
@@ -38,7 +38,7 @@ if len(sys.argv) == 5 and sys.argv[2] == 'percy':
 
 else:
 
-    subprocess.Popen([arg3, arg4, arg4], env=myEnv, shell=True)
+    subprocess.Popen([arg3, arg4, arg5], env=myEnv, shell=True)
 
 
 
