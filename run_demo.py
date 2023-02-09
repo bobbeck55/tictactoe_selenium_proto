@@ -32,9 +32,16 @@ if len(sys.argv) == 5 and sys.argv[2] == 'percy':
     cmd = r'node_modules\\.bin\\percy'
     arg1 = r'exec'
     arg2 = r'--'
+    arg3 = r'dotnet'
+    arg4 = r'test'
+    arg5 = r'--no-restore'
 
+    subprocess.Popen([cmd, arg1, arg2, arg3, arg4, arg5], env=myEnv, shell=True)
 
-subprocess.Popen([cmd, arg1, arg2], env=myEnv, shell=True)
+else:
+
+    subprocess.Popen([cmd, arg3, arg4, arg4], env=myEnv, shell=True)
+
 
 
 
