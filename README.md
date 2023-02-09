@@ -18,7 +18,7 @@ set PERCY_BRANCH=master
 percy exec -- dotnet test --no-restore
 
 2. RUN BASE TEST WITH UPDATE TO APP SRC CODE to
-mismatch AUTOMATED TEST
+guarantee mismatch AUTOMATED TEST
 
 Window 1: Make update to react app
 cd tictactoe_react_proto
@@ -29,3 +29,7 @@ npm start
 Window 2: Run Selenium automated test
 set PERCY_BRANCH=local
 percy exec -- dotnet test --no-restore
+
+FAQ -
+1. working sample test - build #138 at percy.io
+
