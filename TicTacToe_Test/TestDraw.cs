@@ -11,6 +11,8 @@ namespace TicTacToe_Test
         [Test]
         public void TestDraw()
         {
+            Console.WriteLine("TicTacToe_Test::TestDraw");
+
             System.Collections.ObjectModel.ReadOnlyCollection<IWebElement> li = driver.FindElements(By.XPath(BoardPage.SquaresCollection));
 
             li[1].Click();

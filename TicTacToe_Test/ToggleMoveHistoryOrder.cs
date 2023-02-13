@@ -10,6 +10,8 @@ namespace TicTacToe_Test
         [Test]
         public void ToggleMoveHistoryOrder()
         {
+            Console.WriteLine("TicTacToe_Test::ToggleMoveHistoryOrder");
+
             System.Collections.ObjectModel.ReadOnlyCollection<IWebElement> li = driver.FindElements(By.XPath(BoardPage.SquaresCollection));
 
             li[1].Click();

@@ -15,6 +15,8 @@ namespace TicTacToe_Test
         [SetUp]
         public void Setup()
         {
+            Console.WriteLine("TicTacToe_Test::Setup");
+
             // Local Selenium WebDriver
             ChromeOptions options = new();
             //options.AddArgument("--headless");
@@ -69,6 +71,8 @@ namespace TicTacToe_Test
         [TearDown]
         public void close_Browser()
         {
+            Console.WriteLine("TicTacToe_Test::close_Browser");
+
             driver.Quit();
         }
     }
