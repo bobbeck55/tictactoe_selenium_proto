@@ -22,7 +22,10 @@ if len(sys.argv) == 5:
 
 
 # spawn a new cmd prompt window with "npm start"
-p = subprocess.Popen([r'start', r'cmd', '/k', r'demo_cmd.bat'], shell=True)
+os.chdir("../tictactoe_react_proto")
+p = subprocess.Popen([r'git', r'checkout', r'demo_v1'], shell=True);
+p = subprocess.Popen([r'start', r'cmd', r'/k', r'npm', r'start'], shell=True)
+os.chdir("../tictactoe_selenium_proto")
 
 arg3 = r'dotnet'
 arg4 = r'test'
