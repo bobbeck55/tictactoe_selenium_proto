@@ -8,6 +8,7 @@ namespace TicTacToe_Test
 {
     partial class TicTacToe_Test
     {
+        private bool headlessTest = true;
         String test_url = "http://localhost:3000/";
         private ChromeDriver driver;
         private IActor Actor;
@@ -19,7 +20,11 @@ namespace TicTacToe_Test
 
             // Local Selenium WebDriver
             ChromeOptions options = new();
-            //options.AddArgument("--headless");
+            if (headlessTest == true)
+            {
+                options.AddArgument("--headless");
+            }
+
             driver = new ChromeDriver(options);
             Assert.That(driver, Is.Not.Null);
             driver.Url = test_url;
